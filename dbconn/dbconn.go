@@ -212,7 +212,7 @@ func (dbconn *DBConn) Connect(numConns int, utilityMode ...bool) error {
 	// the same object again, then querying for the object in the same
 	// connection will generate a cache lookup failure. To disable pgx's
 	// automatic prepared statement cache we set statement_cache_capacity to 0.
-	connStr := fmt.Sprintf(`user='%s' dbname='%s' krbsrvname='%s' host=%s port=%d sslmode='%s' statement_cache_capacity=0`,
+	connStr := fmt.Sprintf(`user='%s' dbname='%s' krbsrvname='%s' host=%s port=%d sslmode='%s' statement_cache_capacity=512`,
 		user, dbname, krbsrvname, dbconn.Host, dbconn.Port, sslmode)
 
 	dbconn.ConnPool = make([]*sqlx.DB, numConns)
