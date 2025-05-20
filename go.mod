@@ -2,8 +2,6 @@ module github.com/greenplum-db/gp-common-go-libs
 
 go 1.23
 
-toolchain go1.24.2
-
 require (
 	github.com/DATA-DOG/go-sqlmock v1.5.0
 	github.com/blang/semver v3.5.1+incompatible
